@@ -22,3 +22,6 @@ jobs:
 
     - name: Run Selenium script
       run: python auto_visitor_selenium.py
+
+
+      
