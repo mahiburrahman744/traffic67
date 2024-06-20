@@ -10,7 +10,11 @@ import time
 class AutoVisitor:
     def __init__(self, url):
         self.url = url
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        options = webdriver.ChromeOptions()
+        options.headless = True
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     def visit_and_interact(self):
         self.driver.get(self.url)
