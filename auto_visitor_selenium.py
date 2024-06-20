@@ -14,6 +14,8 @@ class AutoVisitor:
         options.headless = True
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--window-size=1920x1080')
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     def visit_and_interact(self):
